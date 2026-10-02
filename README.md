@@ -1,24 +1,28 @@
-# 📦 Sistema de Estoque em Java
+# 📦 Controle de Estoque - Java + PostgreSQL
 
-> Sistema de controle de estoque com persistencia em arquivo - Projeto POO
+> Evolução de projeto de faculdade (ArrayList/arquivo .txt) para sistema profissional com persistência em Banco de Dados Relacional.
 
-## 🚀 Funcionalidades
-- Cadastro de produtos
-- Listagem de estoque
-- Atualizacao de quantidade
-- Remocao de produtos
-- Persistencia de dados em `estoque.txt`
+### 🚀 Stack
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+![JDBC](https://img.shields.io/badge/JDBC-Connection-blue?style=for-the-badge)
 
-## 🛠️ Tecnologias
-- Java (POO - Classes, Objetos, Encapsulamento)
-- Git & GitHub
-- Manipulacao de arquivos
+### ✨ O que o sistema faz
+- **Persistência Real:** Dados salvos em `estoque_db` (PostgreSQL), não apagam ao fechar
+- **Listagem via SQL:** `SELECT * FROM produtos`
+- **Busca Inteligente:** `SELECT ... WHERE nome ILIKE '%termo%'`
+- **Cálculo Patrimonial:** `SELECT SUM(quantidade * preco) FROM produtos` -> R$ 43.350,00
+- **Padrão DAO:** Classe `Conexao.java` separada da regra de negócio
 
-## ▶️ Como rodar
-1. Clone o repositorio: `git clone https://github.com/Jhordsonb/Sistema-Estoque-Java.git`
-2. Abra no IntelliJ
-3. Rode a classe `Main.java`
+### 🖥️ Prova de funcionamento
+- Listagem de 4 produtos direto do banco
+- Valor total em estoque calculado no banco
 
-## 👨‍💻 Autor
-**Jhordson Barbosa** - Estudante de Analise e Desenvolvimento de Sistemas
-[LinkedIn](https://www.linkedin.com/in/jhordson-barbosa-691934438) | [GitHub](https://github.com/Jhordsonb)
+### 🔧 Como rodar
+1. Crie o banco `estoque_db` no pgAdmin
+2. Rode o script `CREATE TABLE produtos (...)`
+3. Configure senha em `Conexao.java`
+4. Adicione o driver `postgresql-42.7.3.jar` em Project Structure > Libraries
+5. Run `EstoqueApp.java`
+
+Desenvolvido por você - De ArrayList para PostgreSQL!

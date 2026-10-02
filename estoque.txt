@@ -1,3 +1,0 @@
-Notebook;3500.0;16
-Mouse;80.0;50
-Teclado;150.0;30
